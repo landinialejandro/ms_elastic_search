@@ -1,0 +1,35 @@
+buildscript {
+	ext {
+		springBootVersion = '2.1.2.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'pe.com.gorillasoft'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'com.google.code.gson:gson'
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'	
+	// https://mvnrepository.com/artifact/org.springframework.data/spring-data-elasticsearch
+	compile group: 'org.springframework.data', name: 'spring-data-elasticsearch', version: '3.1.4.RELEASE'
+	// https://mvnrepository.com/artifact/org.elasticsearch.client/transport
+	compile group: 'org.elasticsearch.client', name: 'transport', version: '6.5.4'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
