@@ -10,6 +10,6 @@ import pe.com.gorillasoft.model.Documento;
 @Repository
 public interface DocumentoRepository extends ElasticsearchRepository<Documento, String> {
 
-	public List<Documento> findBy(String nom);
+	public List<Documento> findByTitle(String title);
 	
 }
