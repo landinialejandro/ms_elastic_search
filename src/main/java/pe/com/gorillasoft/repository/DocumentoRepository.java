@@ -14,6 +14,6 @@ public interface DocumentoRepository extends ElasticsearchRepository<Documento, 
 	
 	public List<Documento> findByContenido(String contenido);
 	
-	public List<Documento> findDistinctPeopleByTituloOrContenido(String titulo, String contenido);
+	public List<Documento> findDistinctPeopleByTituloContainingOrContenidoContaining(String titulo, String contenido);
 	
 }

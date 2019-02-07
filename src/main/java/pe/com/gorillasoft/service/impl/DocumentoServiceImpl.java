@@ -16,7 +16,7 @@ public class DocumentoServiceImpl implements DocumentoService{
 	DocumentoRepository documentoRepository;
 
 	public List<Documento> buscarDocumentos(String text) {
-		List<Documento> lDocumento = documentoRepository.findDistinctPeopleByTituloOrContenido(text, text);
+		List<Documento> lDocumento = documentoRepository.findDistinctPeopleByTituloContainingOrContenidoContaining(text, text);
 		return lDocumento;
 	}
 	
